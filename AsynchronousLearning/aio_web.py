@@ -12,6 +12,7 @@ async def hello(request):
     text='<h1>helllo,%s!</h1>' %request.match_info['name']
     return web.Response(body=text.encode('utf-8'),content_type='text/html')
 
+#init()是一个coroutine,loop.create_server()则利用asyncio创建TCP服务
 
 async def init(loop):
     app=web.Application(loop=loop)
